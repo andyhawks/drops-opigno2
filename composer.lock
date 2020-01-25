@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f2ce5b4357717207d0fb61b52710f8e8",
+    "content-hash": "5a607be6a8dbca24eb2a8d85fba16346",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1441,6 +1441,7 @@
                     }
                 },
                 "patches_applied": {
+                    "2699477": "https://www.drupal.org/files/issues/2018-04-06/calendar-date_range-2699477-71.patch",
                     "2604546": "https://www.drupal.org/files/issues/2018-05-09/2604546-33.patch",
                     "2630234": "https://www.drupal.org/files/issues/fix_menu_tabs_in-2630234-15.patch",
                     "2867991": "https://www.drupal.org/files/issues/tab_navigation_not_working_after_using_pager-2867991-5.patch",
@@ -3727,8 +3728,7 @@
             "homepage": "https://www.drupal.org/project/media_entity_browser",
             "support": {
                 "source": "https://git.drupalcode.org/project/media_entity_browser"
-            },
-            "time": "2019-08-05T00:42:18+00:00"
+            }
         },
         {
             "name": "drupal/message",
@@ -5572,8 +5572,7 @@
             "homepage": "https://www.drupal.org/project/pdf",
             "support": {
                 "source": "https://git.drupalcode.org/project/pdf"
-            },
-            "time": "2019-08-05T13:33:30+00:00"
+            }
         },
         {
             "name": "drupal/permissions_filter",
@@ -6530,8 +6529,7 @@
             "homepage": "https://www.drupal.org/project/view_mode_selector",
             "support": {
                 "source": "https://git.drupalcode.org/project/view_mode_selector"
-            },
-            "time": "2018-11-13T16:00:21+00:00"
+            }
         },
         {
             "name": "drupal/views_role_based_global_text",
@@ -6577,8 +6575,7 @@
             "homepage": "https://www.drupal.org/project/views_role_based_global_text",
             "support": {
                 "source": "https://git.drupalcode.org/project/views_role_based_global_text"
-            },
-            "time": "2018-12-20T07:26:02+00:00"
+            }
         },
         {
             "name": "drupal/views_templates",
@@ -7068,8 +7065,7 @@
                 "url": "https://github.com/mozilla/pdf.js",
                 "reference": "origin/gh-pages"
             },
-            "type": "drupal-library",
-            "time": "2020-01-24T23:27:44+00:00"
+            "type": "drupal-library"
         },
         {
             "name": "namshi/jose",
