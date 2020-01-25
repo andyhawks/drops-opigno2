@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fc581c2b4842307e240bc11b50fdf40f",
+    "content-hash": "f2ce5b4357717207d0fb61b52710f8e8",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1420,7 +1420,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/calendar.git",
-                "reference": "73e2979"
+                "reference": "1ef5b86b11bf69641cc6539bcc93f73e7afb8ebf"
             },
             "require": {
                 "drupal/calendar_datetime": "*",
@@ -1441,12 +1441,9 @@
                     }
                 },
                 "patches_applied": {
-                    "2756445": "https://www.drupal.org/files/issues/2756445-month-names-not-showing-10.patch",
-                    "2699477": "https://www.drupal.org/files/issues/2018-04-06/calendar-date_range-2699477-71.patch",
                     "2604546": "https://www.drupal.org/files/issues/2018-05-09/2604546-33.patch",
                     "2630234": "https://www.drupal.org/files/issues/fix_menu_tabs_in-2630234-15.patch",
                     "2867991": "https://www.drupal.org/files/issues/tab_navigation_not_working_after_using_pager-2867991-5.patch",
-                    "2901594": "https://www.drupal.org/files/issues/week-week-day-display-issues-2901594-15.patch",
                     "2955351": "https://www.drupal.org/files/issues/2018-04-23/2955351-5-base-filter.patch"
                 }
             },
@@ -1485,7 +1482,7 @@
                 "source": "http://cgit.drupalcode.org/calendar",
                 "issues": "https://www.drupal.org/project/issues/calendar"
             },
-            "time": "2018-01-04T14:54:04+00:00"
+            "time": "2018-07-05T11:35:40+00:00"
         },
         {
             "name": "drupal/calendar_datetime",
@@ -3675,7 +3672,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/media_entity_browser.git",
-                "reference": "c75921d"
+                "reference": "8129394b5a28960ed71db5c58de67501d08fd9c1"
             },
             "require": {
                 "drupal/core": "*",
@@ -3731,7 +3728,7 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/media_entity_browser"
             },
-            "time": "2018-04-05T08:15:29+00:00"
+            "time": "2019-08-05T00:42:18+00:00"
         },
         {
             "name": "drupal/message",
@@ -5526,7 +5523,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/pdf.git",
-                "reference": "f558259"
+                "reference": "ec8d13d0d91678946e9e23ec71984e1979818585"
             },
             "require": {
                 "drupal/core": "*"
@@ -5576,7 +5573,7 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/pdf"
             },
-            "time": "2018-10-04T16:03:11+00:00"
+            "time": "2019-08-05T13:33:30+00:00"
         },
         {
             "name": "drupal/permissions_filter",
@@ -6222,8 +6219,7 @@
             "homepage": "https://www.drupal.org/project/stringoverrides",
             "support": {
                 "source": "https://git.drupalcode.org/project/stringoverrides"
-            },
-            "time": "2018-04-10T15:55:40+00:00"
+            }
         },
         {
             "name": "drupal/tft",
@@ -6497,7 +6493,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/view_mode_selector.git",
-                "reference": "11c9ad2"
+                "reference": "93d105f77d073ac9eb5253024058991aa3b10cf8"
             },
             "require": {
                 "drupal/core": "~8.0"
@@ -6535,7 +6531,7 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/view_mode_selector"
             },
-            "time": "2018-02-12T12:03:58+00:00"
+            "time": "2018-11-13T16:00:21+00:00"
         },
         {
             "name": "drupal/views_role_based_global_text",
@@ -6543,7 +6539,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/views_role_based_global_text.git",
-                "reference": "550f8e0"
+                "reference": "026dc0e8e9d2b953b40f14b0634f2cce55780206"
             },
             "require": {
                 "drupal/core": "*"
@@ -6561,9 +6557,7 @@
                         "message": "Dev releases are not covered by Drupal security advisories."
                     }
                 },
-                "patches_applied": {
-                    "2969716": "https://www.drupal.org/files/issues/2018-05-04/2969716-Undefined-index-default.patch"
-                }
+                "patches_applied": []
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
@@ -6584,7 +6578,7 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/views_role_based_global_text"
             },
-            "time": "2015-05-14T10:07:37+00:00"
+            "time": "2018-12-20T07:26:02+00:00"
         },
         {
             "name": "drupal/views_templates",
@@ -12242,11 +12236,12 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "drupal/calendar": 20,
+        "drupal/calendar_datetime": 20,
         "drupal/media_entity_browser": 20,
         "drupal/pdf": 20,
         "drupal/stringoverrides": 20,
         "drupal/view_mode_selector": 20,
-        "drupal/views_role_based_global_text": 20,
+        "mozilla/pdf.js": 20,
         "wikimedia/composer-merge-plugin": 20
     },
     "prefer-stable": true,

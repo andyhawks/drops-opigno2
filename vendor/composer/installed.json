@@ -2571,7 +2571,7 @@
         "source": {
             "type": "git",
             "url": "https://git.drupalcode.org/project/calendar.git",
-            "reference": "73e2979"
+            "reference": "1ef5b86b11bf69641cc6539bcc93f73e7afb8ebf"
         },
         "require": {
             "drupal/calendar_datetime": "*",
@@ -2592,12 +2592,9 @@
                 }
             },
             "patches_applied": {
-                "2756445": "https://www.drupal.org/files/issues/2756445-month-names-not-showing-10.patch",
-                "2699477": "https://www.drupal.org/files/issues/2018-04-06/calendar-date_range-2699477-71.patch",
                 "2604546": "https://www.drupal.org/files/issues/2018-05-09/2604546-33.patch",
                 "2630234": "https://www.drupal.org/files/issues/fix_menu_tabs_in-2630234-15.patch",
                 "2867991": "https://www.drupal.org/files/issues/tab_navigation_not_working_after_using_pager-2867991-5.patch",
-                "2901594": "https://www.drupal.org/files/issues/week-week-day-display-issues-2901594-15.patch",
                 "2955351": "https://www.drupal.org/files/issues/2018-04-23/2955351-5-base-filter.patch"
             }
         },
@@ -5142,7 +5139,7 @@
         "source": {
             "type": "git",
             "url": "https://git.drupalcode.org/project/media_entity_browser.git",
-            "reference": "c75921d"
+            "reference": "8129394b5a28960ed71db5c58de67501d08fd9c1"
         },
         "require": {
             "drupal/core": "*",
@@ -7056,7 +7053,7 @@
         "source": {
             "type": "git",
             "url": "https://git.drupalcode.org/project/pdf.git",
-            "reference": "f558259"
+            "reference": "ec8d13d0d91678946e9e23ec71984e1979818585"
         },
         "require": {
             "drupal/core": "*"
@@ -8054,7 +8051,7 @@
         "source": {
             "type": "git",
             "url": "https://git.drupalcode.org/project/view_mode_selector.git",
-            "reference": "11c9ad2"
+            "reference": "93d105f77d073ac9eb5253024058991aa3b10cf8"
         },
         "require": {
             "drupal/core": "~8.0"
@@ -8101,7 +8098,7 @@
         "source": {
             "type": "git",
             "url": "https://git.drupalcode.org/project/views_role_based_global_text.git",
-            "reference": "550f8e0"
+            "reference": "026dc0e8e9d2b953b40f14b0634f2cce55780206"
         },
         "require": {
             "drupal/core": "*"
@@ -8119,9 +8116,7 @@
                     "message": "Dev releases are not covered by Drupal security advisories."
                 }
             },
-            "patches_applied": {
-                "2969716": "https://www.drupal.org/files/issues/2018-05-04/2969716-Undefined-index-default.patch"
-            }
+            "patches_applied": []
         },
         "installation-source": "source",
         "notification-url": "https://packages.drupal.org/8/downloads",
