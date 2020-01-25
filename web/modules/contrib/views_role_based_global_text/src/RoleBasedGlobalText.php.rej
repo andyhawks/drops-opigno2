@@ -1,0 +1,17 @@
+***************
+*** 15,21 ****
+     */
+    protected function defineOptions() {
+      $options = parent::defineOptions();
+-     $options['roles_fieldset']['roles'] = ['default' => FALSE];
+      return $options;
+    }
+  
+--- 15,21 ----
+     */
+    protected function defineOptions() {
+      $options = parent::defineOptions();
++     $options['roles_fieldset']['default'] = FALSE;
+      return $options;
+    }
+  

@@ -1,0 +1,25 @@
+***************
+*** 17,27 ****
+  #}
+  <div class="calendar-calendar">
+    <div class="month-view">
+-     {% if show_title %}
+        <div class="date-nav-wrapper clear-block">
+          <div class="date-nav">
+            <div class="date-heading">
+-             <!-- print theme('date_nav_title', $params) -->
+            </div>
+           </div>
+        </div>
+--- 17,27 ----
+  #}
+  <div class="calendar-calendar">
+    <div class="month-view">
++     {% if options.month_name %}
+        <div class="date-nav-wrapper clear-block">
+          <div class="date-nav">
+            <div class="date-heading">
++             {{ options.month_name }}
+            </div>
+           </div>
+        </div>
