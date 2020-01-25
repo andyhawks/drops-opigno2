@@ -1,62 +1,137 @@
+# Ignore configuration files that may contain sensitive information.
+local.*
+tests/behat/local.yml
+box/local.config.yml
+*.local
+
+# Ignore drupal core.
+web/core
+
 # Ignore paths that contain user-generated content.
-sites/*/files
-sites/*/private
-files/*
+web/sites/*/files
+/files-private
+web/sites/*/private
 
-# Avoid accidental modification of pantheon.upstream.yml in sites
-# created from this upstream
-pantheon.upstream.yml
+# Ignore contrib modules. These should be created during build process.
+# web/modules/contrib
+# web/themes/contrib
+# web/profiles/contrib
+# web/libraries
+# drush/Commands
 
-# Pantheon commits a settings.php for environment-specific settings.
-# Place local settings in settings.local.php
-sites/*/settings.local.php
+# Ignore custom theme build artifacts
+# web/themes/custom/*/node_modules
+# web/themes/custom/*/css
+# web/themes/custom/*/styleguide
 
-# Note that services.local.yml is not loaded by default. If you would like
-# to use this file add the following to your settings.local.php file:
-#   $settings['container_yamls'][] = __DIR__ . '/services.local.yml';
-sites/*/services.local.yml
+# Ignore build artifacts
+deployment_identifier
+/deploy
+bin/*
+tmp
+reports
 
-# ** Only works in OSs that support newer versions of fnmatch (Bash 4+)
-/sites/default/**/files
-/sites/default/**/private
+# OS X
+.DS_Store
+.AppleDouble
+.LSOverride
 
-# Ignore SimpleTest multi-site environment.
-sites/simpletest
-
-# Packages #
-############
-*.7z
-*.dmg
-*.gz
-*.bz2
-*.iso
-*.jar
-*.rar
-*.tar
-*.zip
-*.tgz
-
-# Logs and databases #
-######################
-*.log
-*.sql
-
-# OS generated files #
-######################
-.DS_Store*
-ehthumbs.db
-
-Thumbs.db
+# Thumbnails
 ._*
 
-# Vim generated files #
-######################
-*.un~
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
 
-# SASS #
-##########
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Eclipse
+*.pydevproject
+.project
+.metadata
+tmp/**
+tmp/**/*
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.classpath
+.settings/
+.loadpath
+
+# External tool builders
+.externalToolBuilders/
+
+# Locally stored "Eclipse launch configurations"
+*.launch
+
+# CDT-specific
+.cproject
+
+# PDT-specific
+.buildpathk
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# User-specific stuff:
+.idea/
+
+#XHProf
+xhprof_*
+
+#Composer vendor
+# vendor/
+vendor/.git
+
+#Sass
 .sass-cache
+*.css.map
 
-# Things in the core directory that Drupal 8 commits in the repository.
-!core/**/*.gz
+#Netbeans IDE
+nbproject
+nbproject/*
 
+# DrupalVM
+.vagrant/
+
+# DevDesktop
+*.dd
+
+#Exports
+*.gz
+*.sql
+*.zip
+
+# PHPStorm
+atlassian-ide-plugin.xml
+
+#NPM
+npm-debug.log
+
+# Drush 9 Checksums
+drush/sites/.checksums
+
+# Deprecation detector rules
+.rules
+
+# Git
+web/libraries/contrib/*/.git*
+web/modules/contrib/*/.git*
+web/themes/contrib/*/.git*
