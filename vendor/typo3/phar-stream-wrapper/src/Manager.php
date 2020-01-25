@@ -1,5 +1,4 @@
 <?php
-declare(strict_types=1);
 namespace TYPO3\PharStreamWrapper;
 
 /*
@@ -12,9 +11,9 @@ namespace TYPO3\PharStreamWrapper;
  * The TYPO3 project - inspiring people to share!
  */
 
-use TYPO3\PharStreamWrapper\Resolver\PharInvocationResolver;
 use TYPO3\PharStreamWrapper\Resolver\PharInvocation;
 use TYPO3\PharStreamWrapper\Resolver\PharInvocationCollection;
+use TYPO3\PharStreamWrapper\Resolver\PharInvocationResolver;
 
 class Manager
 {
@@ -48,7 +47,7 @@ class Manager
         Behavior $behaviour,
         Resolvable $resolver = null,
         Collectable $collection = null
-    ): self {
+    ) {
         if (self::$instance === null) {
             self::$instance = new self($behaviour, $resolver, $collection);
             return self::$instance;
@@ -62,7 +61,7 @@ class Manager
     /**
      * @return self
      */
-    public static function instance(): self
+    public static function instance()
     {
         if (self::$instance !== null) {
             return self::$instance;
@@ -76,7 +75,7 @@ class Manager
     /**
      * @return bool
      */
-    public static function destroy(): bool
+    public static function destroy()
     {
         if (self::$instance === null) {
             return false;
@@ -95,8 +94,14 @@ class Manager
         Resolvable $resolver = null,
         Collectable $collection = null
     ) {
-        $this->collection = $collection ?? new PharInvocationCollection();
-        $this->resolver = $resolver ?? new PharInvocationResolver();
+        if ($collection === null) {
+            $collection = new PharInvocationCollection();
+        }
+        if ($resolver === null) {
+            $resolver = new PharInvocationResolver();
+        }
+        $this->collection = $collection;
+        $this->resolver = $resolver;
         $this->behavior = $behaviour;
     }
 
@@ -105,7 +110,7 @@ class Manager
      * @param string $command
      * @return bool
      */
-    public function assert(string $path, string $command): bool
+    public function assert($path, $command)
     {
         return $this->behavior->assert($path, $command);
     }
@@ -113,9 +118,9 @@ class Manager
     /**
      * @param string $path
      * @param null|int $flags
-     * @return PharInvocation|null
+     * @return null|PharInvocation
      */
-    public function resolve(string $path, int $flags = null)
+    public function resolve($path, $flags = null)
     {
         return $this->resolver->resolve($path, $flags);
     }
@@ -123,7 +128,7 @@ class Manager
     /**
      * @return Collectable
      */
-    public function getCollection(): Collectable
+    public function getCollection()
     {
         return $this->collection;
     }

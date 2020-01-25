@@ -1,5 +1,4 @@
 <?php
-declare(strict_types=1);
 namespace TYPO3\PharStreamWrapper\Interceptor;
 
 /*
@@ -33,7 +32,7 @@ class PharMetaDataInterceptor implements Assertable
      * @return bool
      * @throws Exception
      */
-    public function assert(string $path, string $command): bool
+    public function assert($path, $command)
     {
         if ($this->baseFileDoesNotHaveMetaDataIssues($path)) {
             return true;
@@ -51,21 +50,21 @@ class PharMetaDataInterceptor implements Assertable
      * @param string $path
      * @return bool
      */
-    private function baseFileDoesNotHaveMetaDataIssues(string $path): bool
+    private function baseFileDoesNotHaveMetaDataIssues($path)
     {
         $invocation = Manager::instance()->resolve($path);
         if ($invocation === null) {
             return false;
         }
         // directly return in case invocation was checked before
-        if ($invocation->getVariable(self::class) === true) {
+        if ($invocation->getVariable(__CLASS__) === true) {
             return true;
         }
         // otherwise analyze meta-data
         try {
             $reader = new Reader($invocation->getBaseName());
             $reader->resolveContainer()->getManifest()->deserializeMetaData();
-            $invocation->setVariable(self::class, true);
+            $invocation->setVariable(__CLASS__, true);
         } catch (DeserializationException $exception) {
             return false;
         }

@@ -1,5 +1,4 @@
 <?php
-declare(strict_types=1);
 namespace TYPO3\PharStreamWrapper;
 
 /*
@@ -20,19 +19,19 @@ interface Collectable
      * @param PharInvocation $invocation
      * @return bool
      */
-    public function has(PharInvocation $invocation): bool;
+    public function has(PharInvocation $invocation);
 
     /**
      * @param PharInvocation $invocation
-     * @param int|null $flags
+     * @param null $flags
      * @return bool
      */
-    public function collect(PharInvocation $invocation, int $flags = null): bool;
+    public function collect(PharInvocation $invocation, $flags = null);
 
     /**
      * @param callable $callback
      * @param bool $reverse
      * @return null|PharInvocation
      */
-    public function findByCallback(callable $callback, $reverse = false);
+    public function findByCallback($callback, $reverse = false);
 }

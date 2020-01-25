@@ -1,70 +1,129 @@
 {
-    "name": "drupal/legacy-project",
-    "description": "Project template for Drupal 8 projects with composer following drupal/drupal layout",
-    "type": "project",
-    "license": "GPL-2.0-or-later",
-    "homepage": "https://www.drupal.org/project/drupal",
-    "support": {
-        "docs": "https://www.drupal.org/docs/user_guide/en/index.html",
-        "chat": "https://www.drupal.org/node/314178"
-    },
+    "name":         "opigno/opigno-composer",
+    "description":  "Opigno LMS",
+    "type":         "project",
+    "license":      "GPL-2.0-or-later",
+    "homepage":     "https://opigno.org",
+    "authors": [
+        {
+            "name": "",
+            "role": ""
+        }
+    ],
     "repositories": [
         {
             "type": "composer",
-            "url": "https://packages.drupal.org/8"
+            "url":  "https://packages.drupal.org/8"
+        },
+        {
+            "type": "package",
+            "package" : {
+                "name" :    "enyo/dropzone",
+                "version" : "v5.5.0",
+                "type" :    "drupal-library",
+                "source" : {
+                    "url" :         "https://github.com/enyo/dropzone.git",
+                    "type" :        "git",
+                    "reference" :   "origin/master"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "mozilla/pdf.js",
+                "version": "dev-master",
+                "type": "drupal-library",
+                "source": {
+                    "url": "https://github.com/mozilla/pdf.js",
+                    "type": "git",
+                    "reference": "origin/gh-pages"
+                }
+            }
         }
     ],
     "require": {
         "composer/installers": "^1.2",
-        "drupal/core-composer-scaffold": "^8.8",
-        "drupal/core-project-message": "^8.8",
-        "drupal/core-recommended": "^8.8",
-        "drupal/core-vendor-hardening": "^8.8"
+        "cweagans/composer-patches": "^1.6",
+        "drupal-composer/drupal-scaffold": "^2.5",
+        "drupal/admin_toolbar": "^2.0",
+        "drupal/calendar": "1.x-dev#73e2979",
+        "drupal/media_entity_browser": "2.x-dev#c75921d",
+        "drupal/module_filter": "^3.1",
+        "drupal/pdf": "1.x-dev#f558259",
+        "drupal/permissions_filter": "^1.1",
+        "drupal/stringoverrides": "1.x-dev",
+        "drupal/view_mode_selector": "1.x-dev#11c9ad2",
+        "drupal/views_role_based_global_text": "1.x-dev#550f8e0",
+        "opigno/opigno_lms": "^2.9.0",
+        "wikimedia/composer-merge-plugin": "dev-master"
     },
     "require-dev": {
+        "drush/drush":      "^9.1",
+        "drupal/console":   "~1.0"
     },
     "conflict": {
         "drupal/drupal": "*"
     },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
+    "replace": {
+        "h5p/h5p-core": "*",
+        "h5p/h5p-editor": "*"
+    },
     "config": {
+        "preferred-install": {
+            "drupal/view_mode_selector":            "source",
+            "drupal/views_role_based_global_text":  "source",
+            "drupal/calendar":                      "source",
+            "*":                                    "dist"
+        },
         "sort-packages": true
     },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "classmap": [
+            "scripts/composer/ScriptHandler.php"
+        ]
+    },
+    "scripts": {
+        "pre-install-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
+        ],
+        "pre-update-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
+        ],
+        "post-install-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+        ],
+        "post-update-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+        ]
+    },
     "extra": {
+        "installer-paths": {
+            "web/core":                     ["type:drupal-core"],
+            "web/libraries/{$name}":        ["type:drupal-library"],
+            "web/modules/contrib/{$name}":  ["type:drupal-module"],
+            "web/modules/custom/{$name}":   ["type:drupal-custom-module"],
+            "web/profiles/contrib/{$name}": ["type:drupal-profile"],
+            "web/profiles/custom/{$name}":  ["type:drupal-custom-profile"],
+            "web/themes/contrib/{$name}":   ["type:drupal-theme"],
+            "web/themes/custom/{$name}":    ["type:drupal-custom-theme"],
+            "drush/Commands/{$name}":       ["type:drupal-drush"]
+        },
         "drupal-scaffold": {
+            "initial": {
+                ".editorconfig":  "../.editorconfig",
+                ".gitattributes": "../.gitattributes"
+            },
             "locations": {
-                "web-root": "./"
+                "web-root": "./web/"
             }
         },
-        "installer-paths": {
-            "core": ["type:drupal-core"],
-            "libraries/{$name}": ["type:drupal-library"],
-            "modules/contrib/{$name}": ["type:drupal-module"],
-            "profiles/contrib/{$name}": ["type:drupal-profile"],
-            "themes/contrib/{$name}": ["type:drupal-theme"],
-            "drush/Commands/contrib/{$name}": ["type:drupal-drush"],
-            "modules/custom/{$name}": ["type:drupal-custom-module"],
-            "themes/custom/{$name}": ["type:drupal-custom-theme"]
-        },
-        "drupal-core-project-message": {
-            "include-keys": ["homepage", "support"],
-            "post-create-project-cmd-message": [
-                "<bg=blue;fg=white>                                                         </>",
-                "<bg=blue;fg=white>  Congratulations, you’ve installed the Drupal codebase  </>",
-                "<bg=blue;fg=white>  from the drupal/legacy-project template!               </>",
-                "<bg=blue;fg=white>                                                         </>",
-                "",
-                "<bg=yellow;fg=black>Next steps</>:",
-
-                "  * Install the site: https://www.drupal.org/docs/8/install",
-                "  * Read the user guide: https://www.drupal.org/docs/user_guide/en/index.html",
-                "  * Get support: https://www.drupal.org/support",
-                "  * Get involved with the Drupal community:",
-                "      https://www.drupal.org/getting-involved",
-                "  * Remove the plugin that prints this message:",
-                "      composer remove drupal/core-project-message"
-            ]
+        "enable-patching": true,
+        "composer-exit-on-patch-failure": false,
+        "patchLevel": {
+            "drupal/core": "-p2"
         }
     }
 }

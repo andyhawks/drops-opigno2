@@ -7,3 +7,5 @@ php_version: 7.3
 
 # See https://pantheon.io/docs/pantheon-yml/#enforce-https--hsts for valid values.
 enforce_https: transitional
+
+web_docroot: true
